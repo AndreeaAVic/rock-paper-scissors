@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
+
+body {
+    position: relative;
+    text-align: center;
+    background-color: #af8888;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+img {
+    width: 70%;
+    max-width: 200px;
+    height: auto;
+    border: 4px solid #a9175a;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+img:hover {
+    border: 4px solid lightsalmon;
+}
+
+.players-container {
+    display: flex;
+    justify-content: center;
+}
+
+.player,
+.computer {
+    width: 9%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.player {
+    margin-right: 1px;
+}
+
+.computer {
+    margin-left: 1px;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+}
+
+.player-score,
+.computer-score {
+    border: 1px solid #a9175a;
+    width: 9%;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.player-score {
+    margin-right: 1px;
+}
+
+.computer-score {
+    margin-left: 1px;
+}
+
+.rps-img-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 50px;
+    padding: 40px;
+}
+
+.rps-choice {
+    margin: 0 20px;
+    padding: 10px;
+    border-radius: 20%;
+}
+
+.choices-name {
+    display: inline-block;
+    text-align: justify;
+}
+
+.rock-choice,
+.paper-choice,
+.scissors-choice {
+    font-size: 20px;
+}

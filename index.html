@@ -3,25 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Rock, paper, scissors</title>
 </head>
 <body>
-    <h1>Rock, paper, scissors - the game</h1>
-    <div class="input-container">
-        <p>Please fill in with one of the three: rock, paper, scissors.</p> 
-        <input type="text" id="value-input">
+    <h1>Rock paper scissors</h1>
+
+    <div class="score-container">
+        <div class="players-container">
+            <span class="player">You</span>
+            <span class="computer">Computer</span>
+        </div>
+        <div class="score">
+            <span class="player-score">0</span>
+            <span class="computer-score">0</span>
+        </div>
     </div>
-    <div class="btn-container">
-        <button id="play-btn">PLAY</button>
+
+    <div class="container">
+        <div class="rps-img-container">
+            <div class="rps-choice">
+                <img src="/images/rock.png" id="rock" alt="rock">
+                <div class="rock-choice">ROCK</div>
+            </div>
+
+            <div class="rps-choice">
+                <img src="/images/paper.png" id="paper" alt="paper">
+                <div class="paper-choice">PAPER</div>
+            </div>
+
+            <div class="rps-choice">
+                <img src="/images/scissors.png" id="scissors" alt="scissors">
+                <div class="scissors-choice">SCISSORS</div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <p>Please fill in with one of the three: rock, paper, scissors.</p> 
+            <input type="text" id="value-input">
+        </div>
+        <div class="btn-container">
+            <button id="play-btn">PLAY</button>
+        </div>
+        <div>
+            Your choice: <span id="user-choice-span"></span>
+            <br>
+            Computer choice: <span id="computer-choice-span"></span>
+        </div>
+        <div class="display-container">
+            <p>The result is: <span id="result"></span></p>
+        </div>
     </div>
-    <div>
-        Your choice: <span id="user-choice-span"></span>
-        <br>
-        Computer choice: <span id="computer-choice-span"></span>
-    </div>
-    <div class="display-container">
-        <p>The result is: <span id="result"></span></p>
-    </div>
+
     <script src="index.js"></script>
 </body>
 </html>

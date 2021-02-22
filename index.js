@@ -87,26 +87,3 @@ function displayResultMsg(resultMsg) {
 
 
 playBtn.addEventListener('click', playGame);
-
-
-
-// function displayResult() {
-//     if ((userChoice !== 'rock') && (userChoice !== 'paper') && (userChoice !== 'scissors')) {
-//         result.innerText = 'Wrong input! Try again! This time, please fill in one of the three given values!';
-//     } else if (userChoice === computerChoice) {
-//         result.innerText = 'It is a tie!';
-//     } else if ((userChoice === 'rock') && (computerChoice === 'paper')) {
-//         result.innerText = 'You lose!';
-//     } else if ((userChoice === 'paper') && (computerChoice === 'scissors')) {
-//         result.innerText = 'You lose!';
-//     } else if ((userChoice === 'scissors') && (computerChoice === 'rock')) {
-//         result.innerText = 'You lose!';
-//     } else {
-//         result.innerText = 'You win!';
-//     }
-// }
-
-
-// valueInput.addEventListener('keyup', function (event) {
-//     console.log(event);
-// });
