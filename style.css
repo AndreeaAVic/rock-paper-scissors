@@ -74,13 +74,18 @@ img:hover {
     border-radius: 20%;
 }
 
-.choices-name {
-    display: inline-block;
-    text-align: justify;
+.choice {
+    border: 4px solid #a9175a;
 }
 
-.rock-choice,
-.paper-choice,
-.scissors-choice {
+.choice--selected {
+    border: 4px solid lightsalmon;
+}
+
+.choice-name {
     font-size: 20px;
+}
+
+.choice-name--selected {
+    color: lightsalmon;
 }
