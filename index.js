@@ -150,4 +150,4 @@ function displayResultMsg(resultMsg) {
 }
 
 
-playBtn.addEventListener('click', playGame);
+// playBtn.addEventListener('click', playGame);
