@@ -9,6 +9,11 @@ const scissors = document.querySelector('#scissors');
 const rockName = document.querySelector('#choice-rock');
 const paperName = document.querySelector('#choice-paper');
 const scissorsName = document.querySelector('#choice-scissors');
+const playerScore = document.querySelector('.player-score');
+const computerScore = document.querySelector('.computer-score');
+
+let player = 0;
+let computer = 0;
 
 
 function play() {
@@ -53,6 +58,16 @@ function clickOnImage(choice) {
     displayChoice(computerChoiceResult, computerChoice);
 
     let result = compareChoices(choice, computerChoice);
+    if (result === 2) {
+        computer++;
+        computerScore.innerHTML = computer;
+    } else if (result === 1) {
+        player++; 
+        playerScore.innerHTML = player;
+    } else {
+       playerScore.innerHTML = player;
+       computerScore.innerHTML = computer;
+    }
     displayResult(result);
 }
 
@@ -85,9 +100,6 @@ function compareChoices(player1Choice, player2Choice) {
         case 'scissorsscissors':
             return 0;
             break;    
-        default:
-            return false;
-            break;
     }
 }
 
@@ -103,12 +115,9 @@ function displayResult(result) {
         case 2:
             displayResultMsg('You lose!');
             break;
-    
-        default:
-            displayResultMsg('Wrong input! Try again! This time, please fill in one of the three given values!');
-            break;
     }
 }
+
 
 function displayResultMsg(resultMsg) {
     result.innerText = resultMsg;
