@@ -1,7 +1,5 @@
 console.log('loaded');
 
-const playBtn = document.querySelector('#play-btn');
-const valueInput = document.querySelector('#value-input');
 const userChoiceResult = document.querySelector('#user-choice-span');
 const computerChoiceResult = document.querySelector('#computer-choice-span');
 const result = document.querySelector('#result');
@@ -56,39 +54,6 @@ function clickOnImage(choice) {
 
     let result = compareChoices(choice, computerChoice);
     displayResult(result);
-}
-
-
-function getImageIndex(clickedImage) {
-    const choices = document.getElementsByTagName('img');
-    for (let i = 0; i < choices.length; i++) {
-        const choice = choices[i];
-
-        if (clickedImage === choice) {
-            return i;
-        }
-    }
-}
-
-
-function playGame() {
-    let userChoice = getUserChoice(valueInput);
-    displayChoice(userChoiceResult, userChoice);
-
-    let computerChoice = getRandomComputerChoice();
-    displayChoice(computerChoiceResult, computerChoice);
-
-    let result = compareChoices(userChoice, computerChoice);
-    displayResult(result);
-}
-
-
-function getUserChoice(userInputCtrl) {
-    let userInput = userInputCtrl.value;
-    if (userInput !== null) {
-        userInput = userInput.toLowerCase();
-    }
-    return userInput;
 }
 
 
@@ -148,6 +113,3 @@ function displayResult(result) {
 function displayResultMsg(resultMsg) {
     result.innerText = resultMsg;
 }
-
-
-// playBtn.addEventListener('click', playGame);
