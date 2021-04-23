@@ -17,38 +17,42 @@ let computer = 0;
 
 
 function play() {
-    rock.addEventListener('click', function() {
-        this.classList.add('choice--selected');
-        paper.classList.remove('choice--selected');
-        scissors.classList.remove('choice--selected');
-        rockName.classList.add('choice-name--selected');
-        paperName.classList.remove('choice-name--selected');
-        scissorsName.classList.remove('choice-name--selected');
+    rock.addEventListener('click', function(event) {
+        removeClassFromElements();
+        addClassToElement(event);
         clickOnImage('rock');
     });
     
-    paper.addEventListener('click', function() {
-        this.classList.add('choice--selected');
-        rock.classList.remove('choice--selected');
-        scissors.classList.remove('choice--selected');
-        paperName.classList.add('choice-name--selected');
-        rockName.classList.remove('choice-name--selected');
-        scissorsName.classList.remove('choice-name--selected');
+    paper.addEventListener('click', function(event) {
+        removeClassFromElements();
+        addClassToElement(event);
         clickOnImage('paper');
     });
     
-    scissors.addEventListener('click', function() {
-        this.classList.add('choice--selected');
-        rock.classList.remove('choice--selected');
-        paper.classList.remove('choice--selected');
-        scissorsName.classList.add('choice-name--selected');
-        rockName.classList.remove('choice-name--selected');
-        paperName.classList.remove('choice-name--selected');
+    scissors.addEventListener('click', function(event) {
+        removeClassFromElements();
+        addClassToElement(event);
         clickOnImage('scissors');
     });
 }
 
 play();
+
+
+function removeClassFromElements() {
+    rock.classList.remove('choice--selected');
+    paper.classList.remove('choice--selected');
+    scissors.classList.remove('choice--selected');
+    rockName.classList.remove('choice-name--selected');
+    paperName.classList.remove('choice-name--selected');
+    scissorsName.classList.remove('choice-name--selected');
+}
+
+
+function addClassToElement(event) {
+    event.target.classList.add('choice--selected');
+    event.target.nextElementSibling.classList.add('choice-name--selected');
+}
 
 
 function clickOnImage(choice) {
