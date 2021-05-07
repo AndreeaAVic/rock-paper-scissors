@@ -12,6 +12,8 @@ const scissorsName = document.querySelector('#choice-scissors');
 const playerScore = document.querySelector('.player-score');
 const computerScore = document.querySelector('.computer-score');
 
+const buttonStarter = document.querySelector('#animation-starter');
+
 let player = 0;
 let computer = 0;
 
@@ -57,9 +59,11 @@ function addClassToElement(event) {
 
 function clickOnImage(choice) {
     displayChoice(userChoiceResult, choice);
+    chooseTheAnimationForPlayer(userChoiceResult);
 
     let computerChoice = getRandomComputerChoice();
     displayChoice(computerChoiceResult, computerChoice);
+    chooseTheAnimationForComputer(computerChoiceResult);
 
     let result = compareChoices(choice, computerChoice);
     if (result === 2) {
@@ -125,4 +129,70 @@ function displayResult(result) {
 
 function displayResultMsg(resultMsg) {
     result.innerText = resultMsg;
+}
+
+
+function chooseTheAnimationForPlayer(choiceResult) {
+    switch(choiceResult.innerText) {
+        case 'rock': 
+            startRockAnimation();
+            break;
+        case 'paper':
+            startPaperPlaneAnimation();
+            break;
+        case 'scissors':
+            startScissorsAnimation();
+            break;
+    }
+}
+
+
+function chooseTheAnimationForComputer(choiceResult) {
+    switch(choiceResult.innerText) {
+        case 'rock': 
+            startRockAnimationForComputer();
+            break;
+        case 'paper':
+            startPaperPlaneAnimationForComputer();
+            break;
+        case 'scissors':
+            startScissorsAnimationForComputer();
+            break;
+    }
+}
+
+
+function startRockAnimation() {
+    const stone = document.getElementById('stoneImg');
+    stone.classList.add('stone--for-player'); 
+}
+
+
+function startPaperPlaneAnimation() {
+    const paperPlane = document.getElementById('paperPlaneImg');
+    paperPlane.classList.add('paper-plane--for-player');
+}
+
+
+function startScissorsAnimation() {
+    const pearOfScissors = document.getElementById('pairOfScissorsImg');
+    pearOfScissors.classList.add('pair-of-scissors--for-player');
+}
+
+
+function startRockAnimationForComputer() {
+    const stoneForComputer = document.getElementById('stoneImgForComputer');
+    stoneForComputer.classList.add('computer-stone--selected');
+}
+
+
+function startPaperPlaneAnimationForComputer() {
+    const paperPlaneForComputer = document.getElementById('paperPlaneImgForComputer');
+    paperPlaneForComputer.classList.add('computer-paper-plane--selected');
+}
+
+
+function startScissorsAnimationForComputer() {
+    const scissorsForComputer = document.getElementById('scissorsImgForComputer');
+    scissorsForComputer.classList.add('computer-scissors--selected');
 }

@@ -1,13 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
 
 body {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
     text-align: center;
     background-color: #af8888;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-img {
+.score-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.rps-choice img {
     width: 70%;
     max-width: 200px;
     height: auto;
@@ -16,60 +34,51 @@ img {
     cursor: pointer;
 }
 
-img:hover {
+.rps-choice img:hover {
     border: 4px solid lightsalmon;
 }
 
 .players-container {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 250px;
 }
 
 .player,
 .computer {
-    width: 9%;
+    width: 125px;
     text-align: center;
     font-size: 20px;
 }
 
-.player {
-    margin-right: 1px;
-}
-
-.computer {
-    margin-left: 1px;
-}
-
 .score {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 250px;
 }
 
 .player-score,
 .computer-score {
     border: 1px solid #a9175a;
-    width: 9%;
+    width: 125px;
     border-radius: 10px;
     font-size: 20px;
 }
 
-.player-score {
-    margin-right: 1px;
-}
-
-.computer-score {
-    margin-left: 1px;
-}
-
 .rps-img-container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     margin: 0 50px;
     padding: 40px;
 }
 
 .rps-choice {
-    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 10px;
     border-radius: 20%;
 }
@@ -88,4 +97,197 @@ img:hover {
 
 .choice-name--selected {
     color: lightsalmon;
+}
+
+.animation {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* .animation-for-player {
+    display: flex;
+    justify-content: flex-start;
+} */
+
+/* .animation-for-computer {
+    display: flex;
+    justify-content: flex-end;
+} */
+
+.stone {
+    display: none;
+    height: 100px;
+    position: relative;
+}
+
+.stone--for-player {
+    display: block;
+    animation-name: stoneAnimation;
+    animation-duration: 1s;
+    transition: all linear;
+}
+
+@keyframes stoneAnimation {
+    0% {
+        transform: rotate(50deg);
+        left: 10px;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        left: 280px;
+    }
+}
+
+.computer-stone {
+    display: none;
+    height: 100px;
+    position: relative;
+    right: 0;
+}
+
+.computer-stone--selected {
+    display: block;
+    animation-name: computerStoneAnimation;
+    animation-duration: 1s;
+    transition: all linear;
+}
+
+@keyframes computerStoneAnimation {
+    0% {
+        transform: rotate(-50deg);
+        left: 800px;
+        /* left: 1200px; */
+    }
+
+    100% {
+        transform: rotate(-360deg);
+        left: 600px;
+        /* left: 900px; */
+    }
+}
+
+.paper-plane {
+    display: none;
+    height: 100px;
+    position: relative;
+}
+
+.paper-plane--for-player {
+    display: block;
+    animation-name: paperPlaneAnimation;
+    animation-duration: 1s;
+    transition: all linear;
+}
+
+@keyframes paperPlaneAnimation {
+    0% {
+        transform: rotate(50deg);
+        left: 10px;
+    }
+
+    100% {
+        left: 280px;
+    }
+}
+
+.computer-paper-plane {
+    display: none;
+    transform: rotateY(180deg);
+    height: 100px;
+    position: relative;
+    right: 0;
+}
+
+.computer-paper-plane--selected {
+    display: block;
+    animation-name: computerPaperPlaneAnimation;
+    animation-duration: 1s;
+    transition: all linear;
+}
+
+@keyframes computerPaperPlaneAnimation {
+    0% {
+        transform: rotateX(225deg);
+        left: 1400px;
+    }
+
+    100% {
+        left: 900px;
+    }
+}
+
+.pair-of-scissors {
+    display: none;
+    height: 100px;
+    position: relative;
+}
+
+.pair-of-scissors--for-player {
+    display: block;
+    animation-name: pairOfScissorsAnimation;
+    animation-duration: 1s;
+    transition: all linear;
+}
+
+@keyframes pairOfScissorsAnimation {
+    0% {
+        left: 10px;
+    }
+
+    100% {
+        left: 280px;
+    }
+}
+
+.computer-scissors {
+    display: none;
+    transform: rotateY(180deg);
+    height: 100px;
+    position: relative;
+    right: 0;
+}
+
+.computer-scissors--selected {
+    display: block;
+    animation-name: computerScissorsAnimation;
+    animation-duration: 1s;
+    transition: all linear;
+}
+
+@keyframes computerScissorsAnimation {
+    0% {
+        left: 1400px;
+    }
+
+    100% {
+        left: 900px;
+    }
+}
+
+#result {
+    font-size: 30px;
+    color: #146d64;
+    animation-name: resultAnimation;
+    animation-delay: 0.5s;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes resultAnimation {
+    from { color: #146d64; font-size: 20px; }
+    to { color: gold; font-size: 50px; }
+}
+
+#user-choice-span {
+    display: none;
+}
+
+#computer-choice-span {
+    display: none;
 }
